@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.stage.Stage?>
+
+<Stage xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kutupproje2.Arayuz1Controller">
+    <scene>
+        <Scene>
+            <AnchorPane fx:id="anchorpaneKitapBilgileri" prefHeight="480.0" prefWidth="840.0">
+            <children>
+               <Label fx:id="labelKitapBllgileri" layoutX="7.0" layoutY="7.0" prefHeight="30.0" text="KİTAP BİLGİLERİ">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+                  <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+               </Label>
+               <TableView fx:id="tableviewKitap" layoutX="8.0" layoutY="89.0" prefHeight="335.0" prefWidth="524.0">
+                 <columns>
+                   <TableColumn fx:id="columnBookID" prefWidth="87.1" text="Kitap ID" />
+                   <TableColumn fx:id="columnBookName" prefWidth="87.1" text="Kitap İsmi" />
+                     <TableColumn fx:id="columnAuthor" prefWidth="87.1" text="Yazarı" />
+                     <TableColumn fx:id="columnPublisher" prefWidth="87.1" text="Yayınevi" />
+                     <TableColumn fx:id="columnPageCount" prefWidth="87.1" text="Sayfa Sayısı" />
+                     <TableColumn fx:id="columnPublicationYear" prefWidth="87.1" text="Basım Yılı" />
+                 </columns>
+               </TableView>
+               <Button fx:id="buttonKitaplariListele" layoutX="211.0" layoutY="429.0" mnemonicParsing="false" onAction="#onListAllBooksClicked" prefHeight="37.0" prefWidth="119.0" text="Kitapları Listele" />
+               <Button fx:id="buttonKitapGuncelle" layoutX="580.0" layoutY="305.0" mnemonicParsing="false" onAction="#onUpdateBookClicked" prefHeight="31.0" prefWidth="106.0" text="Kitap Güncelle" />
+               <Button fx:id="buttonKitapEkle" layoutX="616.0" layoutY="395.0" mnemonicParsing="false" onAction="#onAddBookClicked" prefHeight="29.0" prefWidth="140.0" text="Kitap Ekle" />
+               <Button fx:id="buttonKitapSil" layoutX="695.0" layoutY="306.0" mnemonicParsing="false" onAction="#onDeleteBookClicked" prefHeight="30.0" prefWidth="106.0" snapToPixel="false" text="Kitap Sil" />
+               <Button fx:id="buttonAnaSayfa" layoutX="616.0" layoutY="435.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Ana Sayfa" />
+               <Button fx:id="buttonGeri" layoutX="706.0" layoutY="435.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Geri" />
+               <TextField fx:id="textfieldKitapArama" layoutX="8.0" layoutY="44.0" prefHeight="25.0" prefWidth="432.0" text="Metin girin..." />
+               <Button fx:id="buttonListele" layoutX="446.0" layoutY="44.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Listele" />
+               <TextField fx:id="textfieldBookName" layoutX="668.0" layoutY="127.0" />
+               <TextField fx:id="textfieldAuthor" layoutX="668.0" layoutY="165.0" />
+               <TextField fx:id="textfieldPublisher" layoutX="668.0" layoutY="198.0" />
+               <TextField fx:id="textfieldPageCount" layoutX="668.0" layoutY="236.0" />
+               <Label layoutX="552.0" layoutY="89.0" prefHeight="25.0" prefWidth="110.0" text="Kitap ID:" />
+               <Label layoutX="552.0" layoutY="165.0" prefHeight="25.0" prefWidth="110.0" text="Yazarı" />
+               <Label layoutX="552.0" layoutY="198.0" prefHeight="25.0" prefWidth="110.0" text="Yayınevi:" />
+               <Label layoutX="552.0" layoutY="236.0" prefHeight="25.0" prefWidth="110.0" text="Sayfa Sayısı:" />
+               <Label layoutX="552.0" layoutY="272.0" prefHeight="25.0" prefWidth="110.0" text="Basım Yılı:" />
+               <Label layoutX="552.0" layoutY="127.0" prefHeight="25.0" prefWidth="110.0" text="Kitap İsmi" />
+               <TextField fx:id="textfieldPublicationYear" layoutX="668.0" layoutY="272.0" />
+               <TextField fx:id="textfieldBookID" layoutX="668.0" layoutY="89.0" />
+               <Label layoutX="574.0" layoutY="370.0" prefHeight="25.0" prefWidth="224.0" text="Yeni bir kitap mı eklemek istiiyorsunuz?" />
+            </children></AnchorPane>
+        </Scene>
+    </scene>
+</Stage>

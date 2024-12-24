@@ -1,0 +1,38 @@
+/* Arka plan rengi */
+.root {
+
+    -fx-background-color: #e0e0e0;
+
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+/* Başlıklar için yazı tipi */
+.label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* TextField için stil */
+.text-field {
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+/* Buton stili */
+.button {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #388e3c;
+}
