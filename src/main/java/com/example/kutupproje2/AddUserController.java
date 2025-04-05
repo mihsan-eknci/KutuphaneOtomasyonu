@@ -10,20 +10,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AddUserController {
-    @FXML
-    private TextField firstNameField, lastNameField, ageField;
+public class AddUserController extends User{
 
     @FXML
-    private Button saveButton, backButton;
+    private TextField firstNameField, lastNameField, ageField; // Kullanıcı bilgileri için metin alanları
 
+    @FXML
+    private Button saveButton, backButton; // Kaydet ve geri butonları
+
+    // Kaydet butonuna tıklanınca çalışır
     @FXML
     private void onSaveButtonClicked() {
+        // Kullanıcıdan alınan verileri metin alanlarından al
         String firstName = firstNameField.getText();
         String lastName = lastNameField.getText();
         String ageText = ageField.getText();
 
-        // Form doğrulama
+        // Alanların boş olup olmadığını kontrol et
         if (firstName.isEmpty() || lastName.isEmpty() || ageText.isEmpty()) {
             showErrorAlert("Lütfen tüm alanları doldurun!");
             return;
@@ -31,59 +34,65 @@ public class AddUserController {
 
         int age;
         try {
+            // Yaş alanını sayıya çevir ve pozitif bir değer olup olmadığını kontrol et
             age = Integer.parseInt(ageText);
             if (age <= 0) {
                 showErrorAlert("Yaş 0 veya negatif olamaz!");
                 return;
             }
         } catch (NumberFormatException e) {
+            // Sayıya çevrilemezse hata mesajı göster
             showErrorAlert("Yaş bir sayı olmalıdır!");
             return;
         }
 
-        // Kullanıcıyı veritabanına ekle
+        // Kullanıcı bilgilerini veritabanına eklemek için SQL sorgusu
         String query = "INSERT INTO users (firstName, lastName, age) VALUES (?, ?, ?)";
-        try (var conn = DatabaseConnection.connect();
-             var stmt = conn.prepareStatement(query)) {
+        try (var conn = DatabaseConnection.connect(); // Veritabanı bağlantısını başlat
+             var stmt = conn.prepareStatement(query)) { // Sorguyu hazırla
 
+            // Sorguya kullanıcı bilgilerini ekle
             stmt.setString(1, firstName);
             stmt.setString(2, lastName);
             stmt.setInt(3, age);
 
-            stmt.executeUpdate();
-            showSuccessAlert("Kullanıcı başarıyla eklendi!");
+            stmt.executeUpdate(); // Sorguyu çalıştır
+            showSuccessAlert("Kullanıcı başarıyla eklendi!"); // Başarı mesajı göster
 
-            // Sahneyi kapat
+            // Pencereyi kapat
             Stage stage = (Stage) saveButton.getScene().getWindow();
             stage.close();
 
         } catch (Exception e) {
+            // Bir hata oluşursa hata mesajı göster
             showErrorAlert("Kullanıcı eklenirken bir hata oluştu!");
             e.printStackTrace();
         }
     }
 
+    // Geri butonuna tıklanınca çalışır
     @FXML
     private void onBackButtonClicked() {
-        // Sahneyi kapat
+        // Mevcut pencereyi kapat
         Stage stage = (Stage) backButton.getScene().getWindow();
         stage.close();
     }
 
+    // Başarı mesajlarını göstermek için yardımcı metot
     private void showSuccessAlert(String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Başarılı");
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION); // Bilgilendirme türünde uyarı
+        alert.setTitle("Başarılı"); // Başlık
+        alert.setHeaderText(null); // Başlık detayı yok
+        alert.setContentText(content); // Mesaj içeriği
+        alert.showAndWait(); // Mesajı göster ve bekle
     }
 
+    // Hata mesajlarını göstermek için yardımcı metot
     private void showErrorAlert(String content) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Hata");
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
+        Alert alert = new Alert(Alert.AlertType.ERROR); // Hata türünde uyarı
+        alert.setTitle("Hata"); // Başlık
+        alert.setHeaderText(null); // Başlık detayı yok
+        alert.setContentText(content); // Mesaj içeriği
+        alert.showAndWait(); // Mesajı göster ve bekle
     }
-
 }

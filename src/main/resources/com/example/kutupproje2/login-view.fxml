@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1100.0" stylesheets="@../css/login-view.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kutupproje2.LoginController">
+
+    <Label fx:id="labelAdminGirisi" layoutX="921.0" layoutY="160.0" prefHeight="61.0" prefWidth="153.0" text="ADMİN GİRİŞİ">
+      <font>
+         <Font size="18.0" />
+      </font></Label>
+
+    <TextField fx:id="emailInput" layoutX="897.0" layoutY="247.0" prefWidth="200" promptText="Email" />
+
+    <PasswordField fx:id="passwordInput" layoutX="897.0" layoutY="310.0" prefHeight="32.0" prefWidth="200" promptText="Şifre" />
+
+    <Button layoutX="947.0" layoutY="375.0" onAction="#onSignInClicked" prefWidth="100" text="Giriş Yap" />
+   <ImageView fitHeight="44.0" fitWidth="53.0" layoutX="841.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../images/email.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="44.0" fitWidth="53.0" layoutX="841.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../images/password-76-512.png" />
+      </image>
+   </ImageView>
+   <AnchorPane layoutY="1.0" prefHeight="557.0" prefWidth="407.0" />
+   <ImageView fitHeight="700.0" fitWidth="884.0" layoutX="-48.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../images/giris_ekrani_arkaplan_2.jpg" />
+      </image>
+   </ImageView>
+   <Label fx:id="basliklabel" layoutX="66.0" layoutY="57.0" opacity="0.88" prefHeight="268.0" prefWidth="723.0" text="KÜTÜPHANE OTOMASYONU" textFill="WHITE">
+      <font>
+         <Font size="40.0" />
+      </font>
+   </Label>
+   <Label fx:id="basliklabel1" layoutX="230.0" layoutY="221.0" opacity="0.88" prefHeight="268.0" prefWidth="723.0" text="Hoşgeldiniz!" textFill="WHITE">
+      <font>
+         <Font size="40.0" />
+      </font>
+   </Label>
+</AnchorPane>

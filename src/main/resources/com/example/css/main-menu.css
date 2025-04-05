@@ -1,0 +1,28 @@
+/* Label (etiket) genel stili */
+Label {
+    -fx-text-fill: #ffffff;  /* Yazı rengi için */
+    -fx-font-weight: bold; /* yazının kalın yazılmasını sağlar */
+    -fx-font-size: 18px; /* Sabit yazı boyutu */
+    -fx-padding: 5px; /* Sabit iç boşluk */
+}
+
+Label:hover {
+    -fx-text-fill: #D7CCC8; /* Renk değişimi */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 4, 0.5, 0, 2); /* Gölgelendirme efekti */
+    -fx-font-size: 18px; /* Yazı boyutu değişmez */
+    -fx-padding: 5px; /* Padding değişmez */
+}
+
+AnchorPane
+{
+    -fx-background-color: #D7CCC8; /* İstediğiniz arka plan rengi */
+    -fx-background-radius: 10px; /* Köşe yuvarlama */
+}
+
+#container
+{
+    -fx-background-color: #d7ccc8; /* Ana arka plan rengi */
+    -fx-background-radius: 10px; /* Yuvarlaklık oranı */
+    -fx-padding: 10px; /* Kenarlarda boşluk */
+    -fx-border-color: transparent; /* Kenarlık şeffaf yapıldı */
+}

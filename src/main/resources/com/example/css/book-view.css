@@ -1,0 +1,125 @@
+/* Label (etiket) genel stili */
+Label {
+    -fx-text-fill: #000000;  /* Yazı rengi için */
+    -fx-font-weight: bold; /* yazının kalın yazılmasını sağlar */
+    -fx-font-size: 18px; /* Sabit yazı boyutu */
+    -fx-padding: 5px; /* Sabit iç boşluk */
+}
+
+Label:hover {
+    -fx-text-fill: #000000; /* Renk değişimi */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 4, 0.5, 0, 1); /* Gölgelendirme efekti */
+    -fx-font-size: 18px; /* Yazı boyutu değişmez */
+    -fx-padding: 5px; /* Padding değişmez */
+}
+
+TextField {
+    -fx-background-color: #ffffff; /* Arka plan rengi (beyaz) */
+    -fx-border-color: #4c6cb5; /* Kenar rengi */
+    -fx-border-radius: 5px; /* Kenar yuvarlama */
+    -fx-background-radius: 5px; /* Arka plan yuvarlama */
+    -fx-padding: 5px; /* İç kenar boşlukları */
+    -fx-font-size: 14px; /* Yazı boyutu */
+    -fx-text-fill: #333333; /* Yazı rengi */
+}
+
+TextField:focused {
+    -fx-border-color: #34495e; /* Odaklanıldığında kenar rengi */
+    -fx-background-color: #f0f6ff; /* Odaklanıldığında arka plan rengi */
+}
+
+
+AnchorPane
+{
+    -fx-background-color: #D7CCC8; /* İstediğiniz arka plan rengi */
+    -fx-background-radius: 10px; /* Köşe yuvarlama */
+}
+
+/* Button (düğme) genel stili */
+Button {
+    -fx-background-color: #95786d; /* Arka plan rengi */
+    -fx-text-fill: #ffffff; /* Yazı rengi */
+    -fx-padding: 10 20 10 20; /* İç kenar boşlukları */
+    -fx-background-radius: 5; /* Kenarlar yuvarlatılır */
+    -fx-cursor: hand; /* Fare ile üzerine gelindiğinde el işareti olur */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 4, 0.5, 0, 1); /* Gölgelendirme efekti */
+}
+
+Button:hover {
+    -fx-background-color: #69544c; /* Hover durumu için arka plan rengi */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 8, 0.5, 0, 4); /* Daha belirgin gölgelendirme */
+}
+
+
+/* TableView (tablo) genel stili */
+TableView {
+    -fx-background-color: #4c6cb5; /* Arka plan rengi */
+    -fx-border-color: #000000; /* Kenarlık rengi */
+    -fx-border-width: 1px; /* Kenarlık kalınlığı */
+    -fx-padding: 5px; /* Tablonun iç kenarlarına boşluk */
+    -fx-border-radius: 10px; /* Kenarlara yuvarlaklık */
+    -fx-border-color: transparent; /* Kenarlık şeffaf yapıldı */
+    -fx-background-radius: 10px; /* Arka planın köşelerine yuvarlaklık */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 4, 0.5, 0, 2); /* Gölgelendirme efekti */
+
+}
+
+/* TableView başlıklarının genel stili */
+.table-view .column-header-background {
+    -fx-background-color: #4c6cb5; /* İstediğiniz rengi buraya yazın */
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #2c3e50;
+    -fx-border-color: transparent; /* Kenarlık şeffaf yapıldı */
+    -fx-border-width: 1px;
+}
+
+/* Başlık hücrelerinin kenarlarına yuvarlaklık ve renk tanımlama */
+.table-view .column-header .label {
+    -fx-background-color: #34495e; /* Arka plan rengi */
+    -fx-text-fill: white; /* Yazı rengi */
+    -fx-font-size: 14px; /* Yazı boyutu */
+    -fx-font-weight: bold; /* Yazı kalınlığı */
+    -fx-border-radius: 10px; /* Kenar yuvarlama */
+    -fx-border-width: 1px;
+    -fx-background-radius: 10px; /* Yuvarlaklık */
+    -fx-padding: 5px; /* İç kenar boşlukları */
+}
+
+/* TableView hücre stili */
+TableCell {
+    -fx-border-radius: 10px;
+}
+
+#columnBookName
+{
+    -fx-background-color: rgba(0,0,0,0);
+}
+#columnBookID
+{
+    -fx-background-color: rgba(0,0,0,0);
+}
+#columnAuthor
+{
+    -fx-background-color: rgba(0,0,0,0);
+}
+#columnPublisher
+{
+    -fx-background-color: rgba(0,0,0,0);
+}
+#columnPageCount
+{
+    -fx-background-color: rgba(0,0,0,0);
+}
+#columnPublicationYear
+{
+    -fx-background-color: rgba(0,0,0,0);
+}
+#columnGenre
+{
+    -fx-background-color: rgba(0,0,0,0);
+}
+#columnStock
+{
+    -fx-background-color: rgba(0,0,0,0);
+}

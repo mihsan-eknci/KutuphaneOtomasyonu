@@ -2,6 +2,7 @@ package com.example.kutupproje2;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 
@@ -19,7 +20,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class HelloController {
+public class HelloController extends User implements Initialize {
     @FXML
     private TableView<User> tableView;
 
@@ -42,6 +43,7 @@ public class HelloController {
     private Button updateButton, deleteButton, addButton;
 
     private ObservableList<User> userList = FXCollections.observableArrayList();
+
 
     @FXML
     public void initialize() {
@@ -136,13 +138,13 @@ public class HelloController {
     }
 
     @FXML
-    private void onAddButtonClicked() {
+        private void onAddButtonClicked() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/kutupproje2/add-user.fxml"));
-            Scene scene = new Scene(loader.load(), 336, 317); // Genişlik: 500, Yükseklik: 400
+            Scene scene = new Scene(loader.load(), 380, 484); // Genişlik: 500, Yükseklik: 400
 
             // CSS ekleme
-            scene.getStylesheets().add(getClass().getResource("/com/example/kutupproje2/style.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/com/example/css/add-user.css").toExternalForm());
 
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -156,6 +158,11 @@ public class HelloController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void onBackButtonClicked() {
+        HelloApplication.zoomAndFadeTransition("/com/example/kutupproje2/main-menu.fxml");
     }
 
 

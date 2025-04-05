@@ -5,28 +5,57 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kutupproje2.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../css/hello-wiev.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kutupproje2.HelloController">
    <children>
-      <TableView fx:id="tableView" prefHeight="277.0" prefWidth="600.0">
+      <TableView fx:id="tableView" layoutX="40.0" layoutY="59.0" prefHeight="335.0" prefWidth="1032.0">
         <columns>
-          <TableColumn fx:id="columnID" prefWidth="149.75" text="Kullancı ID" />
-          <TableColumn fx:id="columnFirstName" prefWidth="149.75" text="Kullanıcı Adı" />
-            <TableColumn fx:id="columnLastName" prefWidth="149.75" text="Kullanıcı Soyadı" />
-            <TableColumn fx:id="columnAge" prefWidth="149.75" text="Kullanıcı Yaşı" />
+          <TableColumn fx:id="columnID" prefWidth="117.0" text="Kullancı ID" />
+          <TableColumn fx:id="columnFirstName" prefWidth="405.0" text="Kullanıcı Adı" />
+            <TableColumn fx:id="columnLastName" prefWidth="274.0" text="Kullanıcı Soyadı" />
+            <TableColumn fx:id="columnAge" prefWidth="219.0" text="Kullanıcı Yaşı" />
         </columns>
       </TableView>
-      <TextField fx:id="firstNameField" layoutX="162.0" layoutY="291.0" />
-      <TextField fx:id="lastNameField" layoutX="162.0" layoutY="312.0" />
-      <TextField fx:id="ageField" layoutX="162.0" layoutY="337.0" />
-      <TextField fx:id="idField" layoutX="162.0" layoutY="361.0" />
-      <Label fx:id="firstNameLabel" layoutX="32.0" layoutY="293.0" text="Kullanıcı Adı" />
-      <Label fx:id="lastNameLabel" layoutX="30.0" layoutY="314.0" text="Kullanıcı Soyadı" />
-      <Label fx:id="ageLabel" layoutX="30.0" layoutY="339.0" text="Kullanıcı Yaşı" />
-      <Label fx:id="idLabel" layoutX="30.0" layoutY="363.0" text="Kullanıcı ID" />
-      <Button fx:id="updateButton" layoutX="361.0" layoutY="361.0" mnemonicParsing="false" onAction="#onUpdateButtonClicked" text="Güncelle" />
-      <Button fx:id="deleteButton" layoutX="457.0" layoutY="361.0" mnemonicParsing="false" onAction="#onDeleteButtonClicked" text="Sil" />
-      <Button fx:id="addButton" layoutX="517.0" layoutY="361.0" mnemonicParsing="false" onAction="#onAddButtonClicked" text="Ekle" />
+      <TextField fx:id="firstNameField" layoutX="273.0" layoutY="421.0" prefHeight="32.0" prefWidth="237.0" />
+      <TextField fx:id="lastNameField" layoutX="273.0" layoutY="472.0" prefHeight="32.0" prefWidth="237.0" />
+      <TextField fx:id="ageField" layoutX="273.0" layoutY="523.0" prefHeight="32.0" prefWidth="237.0" />
+      <TextField fx:id="idField" layoutX="273.0" layoutY="575.0" prefHeight="32.0" prefWidth="237.0" />
+      <Label fx:id="firstNameLabel" layoutX="120.0" layoutY="419.0" text="Kullanıcı Adı" />
+      <Label fx:id="lastNameLabel" layoutX="90.0" layoutY="469.0" text="Kullanıcı Soyadı" />
+      <Label fx:id="ageLabel" layoutX="109.0" layoutY="521.0" prefHeight="37.0" prefWidth="144.0" text="Kullanıcı Yaşı" />
+      <Label fx:id="idLabel" layoutX="120.0" layoutY="573.0" prefHeight="37.0" prefWidth="144.0" text="Kullanıcı ID" />
+      <Button fx:id="updateButton" layoutX="688.0" layoutY="438.0" mnemonicParsing="false" onAction="#onUpdateButtonClicked" prefHeight="38.0" prefWidth="122.0" text="Güncelle" />
+      <Button fx:id="deleteButton" layoutX="688.0" layoutY="496.0" mnemonicParsing="false" onAction="#onDeleteButtonClicked" prefHeight="38.0" prefWidth="122.0" text="Sil" />
+      <Button fx:id="addButton" layoutX="688.0" layoutY="559.0" mnemonicParsing="false" onAction="#onAddButtonClicked" prefHeight="38.0" prefWidth="122.0" text="Ekle" />
+      <Button fx:id="backButton" layoutX="941.0" layoutY="610.0" mnemonicParsing="false" onAction="#onBackButtonClicked" prefHeight="38.0" prefWidth="122.0" text="Geri Dön" />
+      <Label layoutX="70.0" layoutY="12.0" prefHeight="39.0" prefWidth="211.0" text="KULLANICI İŞLEMLERİ" />
+      <ImageView fitHeight="56.0" fitWidth="62.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/name.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="630.0" layoutY="437.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/edit_user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="630.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/delete_user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="630.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/add_user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="48.0" layoutX="889.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/back.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
